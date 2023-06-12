@@ -22,12 +22,12 @@
             post {
                 success {
                     echo 'Generated Analysis Result'
+               }    
             }
          }
         stage ('Code Quality scan')  {
        withSonarQubeEnv('Sonarserver') {
        sh "${mvnHome}/bin/mvn -f pom.xml sonar:sonar"
-        }
       }
     }
   }
