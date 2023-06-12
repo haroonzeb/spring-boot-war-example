@@ -9,9 +9,10 @@
       }
     }
 
-    stage('Unit Tests - JUnit and Jacoco') {
-      steps {
-        sh "mvn test"
+    stage("Test"){
+            steps{
+                // mvn test
+                sh "mvn test"
       }
       post {
         always {
