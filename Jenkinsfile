@@ -25,7 +25,7 @@
                }    
             }
          }
-        stage ('Code Quality scan'){
+    stage ('Code Quality scan'){
        withSonarQubeEnv('Sonarserver') {
        sh "${mvnHome}/bin/mvn -f pom.xml sonar:sonar"
       }
