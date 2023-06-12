@@ -22,9 +22,9 @@
             post {
                 success {
                     echo 'Generated Analysis Result'
-             }
-          }
+            }
+         }
       }
    }
-}
+ }
 
