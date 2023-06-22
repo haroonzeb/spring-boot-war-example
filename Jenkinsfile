@@ -20,7 +20,7 @@ pipeline {
  stage('Docker Build and Push') {
       steps {
 
-          sh 'docker build -t siddharth67/numeric-app:""$GIT_COMMIT"" .'
+          sh 'docker build -t siddharth67/numeric .'
         }
      
     } 
