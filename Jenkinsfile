@@ -23,5 +23,15 @@ stage('Build Docker Image') {
                   sh 'docker build -t devopshint/my-app-1.0 .'
         }
      } 
-  } 
+      stage('Deploy Docker Image') {
+            steps {
+                script {
+                 withCredentials([string(credentialsId: 'dockerhub-pwd', variable: 'dockerhubpwd')]) {
+                    sh 'docker login -u devopshint -p ${dockerhubpwd}'
+                 }  
+                 sh 'docker push devopshint/my-app-1.0'
+                }
+            }
+        }
+   } 
 }  
