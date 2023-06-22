@@ -17,10 +17,10 @@ pipeline {
             }
             
         }
- stage('Docker Build and Push') {
-      steps {
-
-          sh 'docker build -t siddharth67/numeric.'
+stage('Build Docker Image') {
+            steps {
+                script {
+                  sh 'docker build -t devopshint/my-app-1.0 .'
         }
      } 
   } 
