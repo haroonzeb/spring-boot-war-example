@@ -22,8 +22,9 @@ pipeline {
 
           sh 'docker build -t siddharth67/numeric-app:""$GIT_COMMIT"" .'
         }
-      }
-            steps{
+     
+    } 
+          steps{
                 // deploy on container -> plugin
                 deploy adapters: [tomcat9(credentialsId: 'tomcatserverdetails1', path: '', url: 'http://192.168.0.119:8080')], contextPath: '/app', war: '**/*.war'
 
@@ -43,4 +44,3 @@ pipeline {
              slackSend channel: 'youtubejenkins', message: 'Job Failed'
         }
     }
-}
