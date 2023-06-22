@@ -22,6 +22,6 @@ pipeline {
 
           sh 'docker build -t siddharth67/numeric .'
         }
-     
-    } 
-}         
+     } 
+  } 
+}  
